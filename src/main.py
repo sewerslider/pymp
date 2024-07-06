@@ -12,13 +12,15 @@ mixer.music.play()
 
 while True: 
  
-    query = input("  ") 
+    query = input("control: ") 
 
-    def f(input):
-        match input:
-            case ' ':
-                mixer.music.pause()      
-            case 'q':
-                mixer.music.stop() 
-            case _:
-                print("何")
+    match query:
+        case 'p':
+            mixer.music.pause()      
+        case 'c':
+            mixer.music.unpause()
+        case 'q':
+            mixer.music.stop() 
+            break
+        case _:
+            print("何")
