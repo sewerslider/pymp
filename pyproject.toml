@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pymp"
+version = "0.1.0"
+description = "python music player"
+authors = ["sewerslider"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pygame = "^2.6.0"
+
+[tool.poetry.group.runtime.dependencies]
+python = "^3.12"
+pygame = "^2.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
