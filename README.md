@@ -11,7 +11,7 @@ make install-deps
 
 # Running
 
-Run
+From this directory, run
 ```
-make run
+poetry run ./src/main.py /path/to/a/music/file
 ```
