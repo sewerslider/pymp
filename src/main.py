@@ -1,26 +1,44 @@
-#!/usr/bin/env python
 from pygame import mixer 
+import pygame
+import curses
 import sys
+import time
 
-file = sys.argv[1]
+class Play:
+    file = sys.argv[1]
+    pygame.init()
+    mixer.music.load(file)
+    mixer.music.play(0) 
 
-mixer.init() 
+    def play(self):
+        self.playing = True
+        while True:
+            stdscr= curses.initscr()
+            curses.noecho()
+            curses.cbreak()
+            stdscr.addstr("press p to pause, press c to continue and press q to quit")
+            x = stdscr.getkey()
+            stdscr.clear()
 
-mixer.music.load(file)
+            match x:
 
-mixer.music.play() 
+                case 'p':
+                    if self.playing == True:
+                        mixer.music.pause()
+                        self.playing=False
+                    else:
+                        mixer.music.unpause()
+                        self.playing=True
 
-while True: 
- 
-    query = input("control: ") 
+                case 'q':
+                    mixer.music.stop()
 
-    match query:
-        case 'p':
-            mixer.music.pause()      
-        case 'c':
-            mixer.music.unpause()
-        case 'q':
-            mixer.music.stop() 
-            break
-        case _:
-            print("何")
+                    curses.nocbreak()
+                    stdscr.keypad(False)
+                    curses.echo()
+                    curses.endwin()
+
+                    break
+
+stuff = Play()
+stuff.play()
