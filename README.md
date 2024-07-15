@@ -13,5 +13,5 @@ make install-deps
 
 Run
 ```
-make run
+make test-run
 ```
