@@ -11,12 +11,12 @@ class Play:
     mixer.music.play(0) 
 
     def play(self):
+        stdscr= curses.initscr()
+        curses.noecho()
+        curses.cbreak()
+        stdscr.addstr("press p to pause, press c to continue and press q to quit")
         self.playing = True
         while True:
-            stdscr= curses.initscr()
-            curses.noecho()
-            curses.cbreak()
-            stdscr.addstr("press p to pause, press c to continue and press q to quit")
             x = stdscr.getkey()
             stdscr.clear()
 
@@ -39,6 +39,10 @@ class Play:
                     curses.endwin()
 
                     break
+                
+                case _:
+                    string = "\nno\n"
+                    stdscr.addstr(string)
 
 stuff = Play()
 stuff.play()
