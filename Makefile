@@ -1,2 +1,2 @@
 run:
-	poetry run python  src/main.py
+	poetry run python src/main.py ex.ogg
