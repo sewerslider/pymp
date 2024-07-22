@@ -17,7 +17,7 @@ class Play:
         self.playing = True
         while True:
             x = getkey()
-            stdscr.clear()
+            clear()
 
             match x:
 
@@ -33,7 +33,7 @@ class Play:
                     mixer.music.stop()
 
                     nocbreak()
-                    stdscr.keypad(False)
+                    keypad(stdscr, 'yes')
                     echo()
                     endwin()
 
@@ -41,7 +41,7 @@ class Play:
 
                 case _:
                     string = "\nno\n"
-                    stdscr.addstr(string)
+                    addstr()
 
 stuff = Play()
 stuff.play()
