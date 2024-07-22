@@ -3,12 +3,15 @@ import pygame
 import sys
 from unicurses import *
 
-class Play:
-    file = sys.argv[1]
-    pygame.init()
-    mixer.music.load(file)
-    mixer.music.play(0)
+class Init:
+    def init(self):
+        file = sys.argv[1]
+        pygame.init()
+        mixer.music.load(file)
+        mixer.music.play(0)
 
+class Play:
+    pass
     def play(self):
         stdscr = initscr()
         noecho()
@@ -43,5 +46,8 @@ class Play:
                     string = "\nno\n"
                     addstr()
 
+Init = Init()
+Init.init()
 stuff = Play()
 stuff.play()
+
