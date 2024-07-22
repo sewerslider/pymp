@@ -8,7 +8,7 @@ class Init:
         file = sys.argv[1]
         pygame.init()
         mixer.music.load(file)
-        mixer.music.play(0)
+        mixer.music.play()
 
 class Play:
     pass
@@ -48,6 +48,6 @@ class Play:
 
 Init = Init()
 Init.init()
-stuff = Play()
-stuff.play()
+Play = Play()
+Play.play()
 
