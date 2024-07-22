@@ -1,5 +1,5 @@
 test-run:
-	poetry run python src/main.py ex.ogg
+	poetry run python src/main.py ex.mp3
 
 install-deps:
 	poetry lock
