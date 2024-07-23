@@ -6,16 +6,18 @@ from unicurses import *
 class Init:
     def init(self):
         file = sys.argv[1]
+
         pygame.init()
         mixer.music.load(file)
         mixer.music.play()
 
-class Play:
-    pass
-    def play(self):
         stdscr = initscr()
         noecho()
         cbreak()
+
+
+class Play:
+    def play(self):
         addstr("press p to pause, press c to continue and press q to quit")
         self.playing = True
         while True:
