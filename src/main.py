@@ -37,9 +37,6 @@ class Play:
                 case 'q':
                     mixer.music.stop()
 
-                    nocbreak()
-                    keypad(stdscr, 'yes')
-                    echo()
                     endwin()
 
                     break
@@ -50,6 +47,7 @@ class Play:
 
 Init = Init()
 Init.init()
+
 Play = Play()
 Play.play()
 
