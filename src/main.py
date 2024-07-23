@@ -18,7 +18,7 @@ class Init:
 
 class Play:
     def play(self):
-        addstr("press p to pause, press c to continue and press q to quit")
+        addstr("press p to toggle play and press q to quit")
         self.playing = True
         while True:
             x = getkey()
