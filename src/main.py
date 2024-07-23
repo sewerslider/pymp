@@ -46,7 +46,7 @@ class Play:
 
                 case _:
                     string = "\nno\n"
-                    addstr()
+                    addstr(string)
 
 Init = Init()
 Init.init()
