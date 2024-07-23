@@ -18,7 +18,7 @@ class Init:
 
 class Play:
     def play(self):
-        addstr("press p to toggle play and press q to quit")
+        addstr("press p to toggle play, f to fast forward and q to quit")
         self.playing = True
         while True:
             x = getkey()
@@ -40,6 +40,11 @@ class Play:
                     endwin()
 
                     break
+                
+                case 'f':
+                    current_time = mixer.music.get_pos() / 750  
+                    new_time = current_time + 5
+                    pygame.mixer.music.set_pos(new_time)
 
                 case _:
                     string = "\nno\n"
